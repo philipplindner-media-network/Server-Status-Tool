@@ -1,0 +1,2 @@
+# This file contains the URL for the server and the PHP script
+http://xyz.com/sst #<-- example
