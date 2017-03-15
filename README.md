@@ -1,37 +1,28 @@
-## Welcome to GitHub Pages
+## Willkommen auf der Projekt seite von "Server Status Tool"
 
-You can use the [editor on GitHub](https://github.com/philipplindner-media-network/Server-Status-Tool/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Diesi tool ermöglich ohne Großen aufwan keine Server zu überwachen.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Instalation
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
+Alle Dateten Herunterladen, oder nur der ServerTool_v2.zip Datei. die index.php und hddtemp.sh Datei auf den Server Hochladen in eine Ordener Names sst (muss Erselet weden und Schreibrechet (777) vergeben weden). Dann die Datei hddtemp.sh mit Folgdenden Befel Bearbeiten:
 ```markdown
-Syntax highlighted code block
+chmod +x hddtemp.sh
+```
+Des weiteren weden volgden Programm Benötigt (Bitte suchen sei für Ihr System die passenden Befele aus.
 
-# Header 1
-## Header 2
-### Header 3
+- hddtemp
+- lm-sensors
+- sudo
 
-- Bulleted
-- List
+Für Aktuelle Temperatoren der HDD's und SSD's muss noch eine Crontab erstelt werden
+```markdown
+crontab -e
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+*/5 * * * * sudo sh /var/www/html/sst/hddtemp.sh
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/philipplindner-media-network/Server-Status-Tool/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Für Hilfe und Anmeldungen bitte per mail an post[at]philipp-lindner[dot]de
