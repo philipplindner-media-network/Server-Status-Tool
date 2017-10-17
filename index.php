@@ -112,10 +112,16 @@ $aCheck['load'] = $load[0];
 $aCheck['online']="100%";
 
 //ping tool
-exec(sprintf('ping -c 1 -W 5 %s', escapeshellarg("googel.de")), $res, $rval);
-$export = $res[1];
-$time=explode("time=",$export);
-$aCheck['ping'] = $time[1];
+function ping($host, $port, $timeout) 
+{ 
+  $tB = microtime(true); 
+  $fP = fSockOpen($host, $port, $errno, $errstr, $timeout); 
+  if (!$fP) { return "down"; } 
+  $tA = microtime(true); 
+  return round((($tA - $tB) * 1000), 0)." ms"; 
+}
+$aCheck['ping']=ping("www.google.com", 80, 10);
+
 
 //LS Sensors
 $fan=		shell_exec("sensors | grep fan");
